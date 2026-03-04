@@ -9,9 +9,21 @@ let initialShapes = [
 const ShapeEditor = () => {
   const [shapes, setShapes] = useState(initialShapes);
 
+  function handleClick() {
+    setShapes(
+      shapes.map((s) => {
+        if (s.type === "Square") {
+          return { ...s, x: s.x + 25, y: s.y + 50 };
+        } else {
+          return s;
+        }
+      }),
+    );
+  }
+
   return (
     <>
-      <button>Move circles down!</button>
+      <button onClick={handleClick}>Move circles down!</button>
       {shapes.map((s) => (
         <div
           key={s.id}
