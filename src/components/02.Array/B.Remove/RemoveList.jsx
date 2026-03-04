@@ -14,9 +14,15 @@ const RemoveList = () => {
       <h1>Artist List:</h1>
 
       <ul>
-        {artists.map((a) => (
-          <li key={a.id}>
-            {a.name} <button>DELETE</button>
+        {artists.map((artist) => (
+          <li key={artist.id}>
+            {artist.name}{" "}
+            <button
+              onClick={() => {
+                setArtists(artists.filter((a) => a.id !== artist.id));
+              }}>
+              DELETE
+            </button>
           </li>
         ))}
       </ul>

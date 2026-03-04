@@ -13,8 +13,8 @@ const App = () => {
   return (
     <div>
       {/* <LoginForm /> */}
-      <CreateList />
-      {/* <RemoveList /> */}
+      {/* <CreateList /> */}
+      <RemoveList />
       {/* <UpdateList /> */}
       {/* <CounterList /> */}
       {/* <InsertList /> */}
