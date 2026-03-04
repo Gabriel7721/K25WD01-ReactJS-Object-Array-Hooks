@@ -9,8 +9,15 @@ const CreateList = () => {
   return (
     <>
       <h1>Artist List:</h1>
-      <input />
-      <button>ADD</button>
+      <input value={name} onChange={(e) => setName(e.target.value)} />
+      <button
+        onClick={() => {
+          // setArtists([...artists,{id: nextId++, name: name}])
+          setArtists([{ id: nextId++, name: name }, ...artists]);
+          // artists.push({ id: nextId++, name: name });
+        }}>
+        ADD
+      </button>
       <ul>
         {artists.map((a) => (
           <li key={a.id}>{a.name}</li>

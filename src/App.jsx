@@ -13,14 +13,14 @@ const App = () => {
   return (
     <div>
       {/* <LoginForm /> */}
-      {/* <CreateList /> */}
+      <CreateList />
       {/* <RemoveList /> */}
       {/* <UpdateList /> */}
       {/* <CounterList /> */}
       {/* <InsertList /> */}
       {/* <PaintingListClone /> */}
       {/* <PaintingListCloneAndOrigin /> */}
-      <BucketList />
+      {/* <BucketList /> */}
     </div>
   );
 };
