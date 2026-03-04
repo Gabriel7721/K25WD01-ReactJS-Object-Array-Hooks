@@ -11,24 +11,46 @@ const BucketList = () => {
   const [myList, setMyList] = useState(initialList);
   const [yourList, setYourList] = useState(initialList);
 
+  function handleToggleMyList(artworkId, nextSeen) {
+    const myNextList = [...myList];
+    const artwork = myNextList.find((a) => a.id === artworkId);
+    artwork.seen = nextSeen;
+    setMyList(myNextList);
+  }
+
+  function handleToggleYourList(artworkId, nextSeen) {
+    const yourNextList = [...yourList];
+    const artwork = yourNextList.find((a) => a.id === artworkId);
+    artwork.seen = nextSeen;
+    setYourList(yourNextList);
+  }
+
   return (
     <>
       <h1>Art Bucket List</h1>
+
       <h2>My list art to see:</h2>
-      <ItemList artworks={myList} />
+      <ItemList artworks={myList} onToggle={handleToggleMyList} />
+
       <h2>Your list art to see:</h2>
-      <ItemList artworks={yourList} />
+      <ItemList artworks={yourList} onToggle={handleToggleYourList} />
     </>
   );
 };
 
-const ItemList = ({ artworks }) => {
+const ItemList = ({ artworks, onToggle }) => {
   return (
     <ul>
       {artworks.map((a) => (
         <li>
           <label>
-            <input type="checkbox" checked={a.seen} />
+            <input
+              type="checkbox"
+              checked={a.seen}
+              onChange={(e) => {
+                onToggle(a.id, e.target.checked);
+              }}
+            />
             {a.title}
           </label>
         </li>

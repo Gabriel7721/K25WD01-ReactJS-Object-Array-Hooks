@@ -16,11 +16,11 @@ const App = () => {
       {/* <CreateList /> */}
       {/* <RemoveList /> */}
       {/* <UpdateList /> */}
-      <CounterList />
+      {/* <CounterList /> */}
       {/* <InsertList /> */}
       {/* <PaintingListClone /> */}
       {/* <PaintingListCloneAndOrigin /> */}
-      {/* <BucketList /> */}
+      <BucketList />
     </div>
   );
 };

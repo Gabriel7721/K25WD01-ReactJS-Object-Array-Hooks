@@ -31,10 +31,16 @@ let initialPaintingList = [
 const PaintingListClone = () => {
   const [paintingList, setPaintingList] = useState(initialPaintingList);
 
+  function handleClick() {
+    const newList = [...paintingList];
+    newList.reverse();
+    setPaintingList(newList);
+  }
+
   return (
     <>
       <h1>Great Paintings</h1>
-      <button>Reverse</button>
+      <button onClick={handleClick}>Reverse</button>
       <ol>
         {paintingList.map((pl) => (
           <li key={pl.id}>
