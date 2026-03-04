@@ -12,17 +12,27 @@ const BucketList = () => {
   const [yourList, setYourList] = useState(initialList);
 
   function handleToggleMyList(artworkId, nextSeen) {
-    const myNextList = [...myList];
-    const artwork = myNextList.find((a) => a.id === artworkId);
-    artwork.seen = nextSeen;
-    setMyList(myNextList);
+    setMyList(
+      myList.map((a) => {
+        if (a.id === artworkId) {
+          return { ...a, seen: nextSeen };
+        } else {
+          return a;
+        }
+      }),
+    );
   }
 
   function handleToggleYourList(artworkId, nextSeen) {
-    const yourNextList = [...yourList];
-    const artwork = yourNextList.find((a) => a.id === artworkId);
-    artwork.seen = nextSeen;
-    setYourList(yourNextList);
+    setYourList(
+      myList.map((a) => {
+        if (a.id === artworkId) {
+          return { ...a, seen: nextSeen };
+        } else {
+          return a;
+        }
+      }),
+    );
   }
 
   return (
