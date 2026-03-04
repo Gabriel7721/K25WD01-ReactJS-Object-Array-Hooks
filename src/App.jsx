@@ -15,8 +15,8 @@ const App = () => {
       {/* <LoginForm /> */}
       {/* <CreateList /> */}
       {/* <RemoveList /> */}
-      <UpdateList />
-      {/* <CounterList /> */}
+      {/* <UpdateList /> */}
+      <CounterList />
       {/* <InsertList /> */}
       {/* <PaintingListClone /> */}
       {/* <PaintingListCloneAndOrigin /> */}
